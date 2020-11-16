@@ -12,27 +12,27 @@ const router = Router();
 
 router.post('/on',  (req: Request, res: Response) => {
     console.log("[LAMP] POST /lamp")
-    exec("sudo ./uhubctl -a on -p 1 -l 2", (err) => {
+    return exec("sudo ./uhubctl -a on -p 1 -l 2", (err) => {
         if (err){
             console.error(err);
-            res.status(INTERNAL_SERVER_ERROR);
+            return res.status(INTERNAL_SERVER_ERROR);
+        }else{
+            return res.status(OK)
         }
-        res.status(OK)
     })
-    return res.status(OK).json({});
 });
 
 
 router.post('/off',  (req: Request, res: Response) => {
     console.log("[LAMP] POST /lamp")
-    exec("sudo ./uhubctl -a off -p 1 -l 2", (err) => {
+    return exec("sudo ./uhubctl -a off -p 1 -l 2", (err) => {
         if (err){
             console.error(err);
-            res.status(INTERNAL_SERVER_ERROR);
+            return res.status(INTERNAL_SERVER_ERROR);
+        }else{
+            return res.status(OK)
         }
-        res.status(OK)
     })
-    return res.status(OK).json({});
 });
 
 
