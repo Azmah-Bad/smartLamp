@@ -13,21 +13,14 @@ const router = Router();
 
 router.post('/on',  async(req: Request, res: Response) => {
     await AsyncExec("sudo ./uhubctl -a on -p 1 -l 2")
-    return res.status(OK)
+    return res.sendStatus(200)
 
 });
 
 
-router.post('/off',  (req: Request, res: Response) => {
-    console.log("[LAMP] POST /lamp")
-    return exec("sudo ./uhubctl -a off -p 1 -l 2", (err) => {
-        if (err){
-            console.error(err);
-            return res.status(INTERNAL_SERVER_ERROR);
-        }else{
-            return res.status(OK)
-        }
-    })
+router.post('/off',  async(req: Request, res: Response) => {
+    await AsyncExec("sudo ./uhubctl -a off -p 1 -l 2")
+    return res.sendStatus(200)
 });
 
 
