@@ -1,33 +1,19 @@
 body {
-  padding: 100px;
+  background: #2B2D42;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-body .users-column {
-  display: inline-block;
-  margin-right: 2em;
-  vertical-align: top;
+.light_off{
+  position: absolute;
+  left: 47px;
+  top: 194px;
+
 }
 
-body .users-column .column-header {
-  padding-bottom: 5px;
-  font-weight: 700;
-  font-size: 1.2em;
-}
+.light_on{
+  position: absolute;
+  right: 49px;
+  top: 194px;
 
-body .add-user-col input {
-  margin-bottom: 10px;
-}
-
-body .users-column .user-display-ele {
-  padding-bottom: 10px;
-}
-
-body .users-column .user-display-ele button {
-  margin-top: 2px;
-  margin-bottom: 10px;
-}
-
-body .users-column .user-display-ele .edit-view {
-  display: none;
 }
