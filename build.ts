@@ -2,6 +2,7 @@
  * Remove old files, copy front-end ones.
  */
 
+// @ts-ignore
 import fs from 'fs-extra';
 import Logger from 'jet-logger';
 
