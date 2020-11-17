@@ -25,17 +25,17 @@ router.post('/off',  async(req: Request, res: Response) => {
 });
 
 // toggle route
-let isLightOn = false;
+let isLightOn = true;
 exec("sudo ./uhubctl -a off -p 1 -l 2", ()=> {logger.info("light turned off")})
 router.post('/toggle',  async(req: Request, res: Response) => {
-    isLightOn = !isLightOn;
     if(isLightOn){
         await AsyncExec("sudo ./uhubctl -a off -p 1 -l 2")
-        return res.sendStatus(200)
+
     } else {
         await AsyncExec("sudo ./uhubctl -a on -p 1 -l 2")
-        return res.sendStatus(200)
     }
+    isLightOn = !isLightOn;
+    return res.sendStatus(200)
 });
 
 
